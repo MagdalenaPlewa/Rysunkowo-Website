@@ -9,7 +9,10 @@ const cancelBtn = document.querySelector(".cancel-btn")
 const sectionIds = document.querySelectorAll('section[id]')
 const bg = document.querySelector(".bg")
 const bgImg = document.querySelector(".bg img")
+const showBtn = document.querySelectorAll(".show-btn")
 const arrow = document.querySelector(".arrow")
+const scrollBtn = document.querySelector('.scroll-button');
+const galleryImg = document.querySelectorAll(".gallery-img")
 let sectionIdsArr = [...sectionIds]
 
 let timer
@@ -197,7 +200,7 @@ function slider(){
     }, 2500)
 }
 
-/*------------------------------------------------*/
+/*AddEventListeners functions*/
 bgImg.addEventListener("mouseover", () => {
     if(bg.classList.contains("moving")){
         return
@@ -212,14 +215,38 @@ bgImg.addEventListener("mouseover", () => {
     }
 })
 
-/*----------------------------------------------*/
 arrow.addEventListener("click", () => {
     const divInfo = document.querySelector(".orders .info")
     const infoOffset = divInfo.offsetTop
     window.scrollTo(0, infoOffset+50)
 })
 
-/*----------------------------------------------*/
+showBtn.forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+        const btnId = event.target.parentNode.id
+        galleryImg.forEach((el) => {
+            const {id} = el.dataset
+            if(btnId === id){
+                el.classList.remove("gallery-hidden")
+                btn.style.display = "none"
+            }
+        })
+    })
+})
+
+window.addEventListener("scroll", () => {
+    if(window.pageYOffset > 300){
+        scrollBtn.classList.add("visible")
+    }
+    else{
+        scrollBtn.classList.remove("visible")
+    }
+})
+
+scrollBtn.addEventListener("click", () => {
+    let top = window.top
+    window.scrollTo({top, behavior: "smooth"})
+})
 
 slider()
 sideChanger()

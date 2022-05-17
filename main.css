@@ -495,22 +495,22 @@ section.show{
 }
 
 .box-one{
-    background: url('img/pencil_bg.jpg')center;
+    background: url('img/pencil_bg.jpg') center;
     background-size: cover;
 }
 
 .box-two{
-    background: url('img/carbon_bg.jpg')center;
+    background: url('img/carbon_bg.jpg') center;
     background-size: cover;
 }
 
 .box-three{
-    background: url('img/pastels_bg.jpg')center;
+    background: url('img/pastels_bg.jpg') center;
     background-size: cover;
 }
 
 .box-four{
-    background: url('img/crayons_bg.jpg')center;
+    background: url('img/crayons_bg.jpg') center;
     background-size: cover;
 }
 
@@ -594,6 +594,11 @@ section.show{
     text-align: center;
 }
 
+.gallery-hidden{
+    overflow: hidden;
+    height: 175px;
+}
+
 .gallery-img img{
     height: 175px;
     width: auto;
@@ -610,6 +615,34 @@ section.show{
     cursor: pointer;
     opacity: 0.85;
     border: #097bd8 2px solid;
+}
+
+.show-btn{
+    width: 150px;
+    height: 38px;
+    padding: 5px 10px;
+    text-align: center;
+    margin: 50px auto 0;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    font-size: 18px;
+    transition: 0.1s;
+    -webkit-transition: 0.1s;
+    -moz-transition: 0.1s;
+    -ms-transition: 0.1s;
+    -o-transition: 0.1s;
+}
+
+.show-btn:hover{
+    cursor: pointer;
+}
+
+.show-btn:active{
+    padding: 7px 10px 3px 10px;
 }
 
 .showPicture{
@@ -860,7 +893,7 @@ td{
         -moz-transform: translate(10px, 10px);
         -ms-transform: translate(10px, 10px);
         -o-transform: translate(10px, 10px);
-}
+    }
 }
 
 /*Contact Section CSS*/
@@ -935,6 +968,37 @@ td{
     font-family: 'Oooh Baby', cursive;
 }
 
+.scroll-button{
+    position: absolute;
+
+    display: none;
+    color: white;
+    text-align: center;
+    bottom: 20%;
+    font-size: 24px;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    transition: 2s;
+    -webkit-transition: 2s;
+    -moz-transition: 2s;
+    -ms-transition: 2s;
+    -o-transition: 2s;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.scroll-button:hover{
+    cursor: pointer;
+}
+
+.scroll-button.visible{
+    display: block;
+}
+
 @media(max-width: 1200px){
     .bg{
         right: 100px;
@@ -965,12 +1029,9 @@ td{
         font-size: 18px;
     }
 
-    .drawing-technic{
-        margin-bottom: 100px;
-    }
-
-    .drawing-technic::after{
-        bottom: -50px;
+    .gallery-hidden{
+        overflow: hidden;
+        height: 355px;
     }
 
     table{
@@ -1092,12 +1153,9 @@ td{
         font-size: 16px;
     }
 
-    .drawing-technic{
-        margin-bottom: 80px;
-    }
-
-    .drawing-technic::after{
-        bottom: -40px;
+    .gallery-hidden{
+        overflow: hidden;
+        height: 255px;
     }
 
     .gallery-img img{
@@ -1197,7 +1255,7 @@ td{
     }
 
     .drawing-technic{
-        margin-bottom: 0;
+        margin-bottom: 20px;
     }
 
     .description .info{
